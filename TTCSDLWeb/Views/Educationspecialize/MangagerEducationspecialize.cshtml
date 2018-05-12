@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TTCSDLWeb.Models.DTO.Educationspecialize>
+
+@{
+    ViewBag.Title = "MangagerEducationspecialize";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MangagerEducationspecialize</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codeview)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.educationfieldcode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codeview)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.educationfieldcode)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { item.code }) |
+            @Html.ActionLink("Delete", "Delete", new { item.code })
+        </td>
+    </tr>
+}
+
+</table>

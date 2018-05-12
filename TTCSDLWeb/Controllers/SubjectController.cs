@@ -19,27 +19,12 @@ namespace TTCSDLWeb.Controllers
             List<Subject> listSubject = SubjectBUS.Instance.GetList();
             return View(listSubject);
         }
-
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        public ActionResult doLogin(string username, string password)
-        {
-            if (username.Equals("admin") && password.Equals("123"))
-            {
-                ses.login();
-                return RedirectToAction("MangagerSubject", "Subject");
-            }
-            return RedirectToAction("Login", "Subject");
-        }
-
+        
         public ActionResult MangagerSubject()
         {
             if (ses.isLogin() == -1)
             {
-                return RedirectToAction("Login", "Subject");
+                return RedirectToAction("Login", "Home");
             }
             List<Subject> listSubject = SubjectBUS.Instance.GetList();
             return View(listSubject);
@@ -76,6 +61,12 @@ namespace TTCSDLWeb.Controllers
         {
             SubjectBUS.Instance.Delete(code);
             return RedirectToAction("MangagerSubject", "Subject");
+        }
+
+        [CustomAuthentication]
+        public ActionResult SubjectReact()
+        {
+            return View();
         }
 
     }

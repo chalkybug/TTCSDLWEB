@@ -58,5 +58,12 @@ namespace TTCSDLWeb
            
             return 0;
         }
+
+
+        public int func(string key)
+        {
+            return 15;
+        }
+
     }
 }

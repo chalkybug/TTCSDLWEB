@@ -168,29 +168,33 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomAuthenticationAttribute.cs" />
+    <Compile Include="Controllers\EducationspecializeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IsAuthentication.cs" />
     <Compile Include="IsSession.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BUS\CourseBUS.cs" />
     <Compile Include="Models\BUS\EducationfieldBUS.cs" />
     <Compile Include="Models\BUS\EducationspecializeBUS.cs" />
+    <Compile Include="Models\BUS\GroupsubjectBUS.cs" />
     <Compile Include="Models\BUS\SubjectBUS.cs" />
     <Compile Include="Models\BUS\TrainingdetailsBUS.cs" />
     <Compile Include="Models\DAO\CourseDAO.cs" />
     <Compile Include="Models\DAO\DataProvider.cs" />
     <Compile Include="Models\DAO\EducationfieldDAO.cs" />
     <Compile Include="Models\DAO\EducationspecializeDAO.cs" />
+    <Compile Include="Models\DAO\GroupsubjectDAO.cs" />
     <Compile Include="Models\DAO\SubjectDAO.cs" />
     <Compile Include="Models\DAO\TrainingdetailsDAO.cs" />
     <Compile Include="Models\DTO\Course.cs" />
     <Compile Include="Models\DTO\Educationfield.cs" />
     <Compile Include="Models\DTO\Educationspecialize.cs" />
+    <Compile Include="Models\DTO\Groupsubject.cs" />
     <Compile Include="Models\DTO\Subject.cs" />
     <Compile Include="Models\DTO\Trainingdetails.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -215,7 +219,14 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jsx\Hello.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\react\JSXTransformer-0.12.2.js" />
+    <Content Include="Scripts\react\react-0.12.2.js" />
+    <Content Include="Scripts\react\react-0.12.2.min.js" />
+    <Content Include="Scripts\react\react-dom.js" />
+    <Content Include="Scripts\react\react-with-addons-0.12.2.js" />
+    <Content Include="Scripts\react\react-with-addons-0.12.2.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -255,8 +266,15 @@
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Subject\Login.cshtml" />
     <Content Include="Views\Subject\MangagerSubject.cshtml" />
-    <Content Include="Views\Subject\Edit.cshtml" />
     <Content Include="Views\Subject\Create.cshtml" />
+    <Content Include="Views\Educationspecialize\Index.cshtml" />
+    <Content Include="Views\Educationspecialize\Login.cshtml" />
+    <Content Include="Views\Educationspecialize\MangagerEducationspecialize.cshtml" />
+    <Content Include="Views\Educationspecialize\Create.cshtml" />
+    <Content Include="Views\Educationspecialize\Edit.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Subject\Edit.cshtml" />
+    <Content Include="Views\Subject\SubjectReact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

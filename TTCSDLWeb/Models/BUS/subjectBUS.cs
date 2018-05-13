@@ -33,48 +33,25 @@ namespace TTCSDLWeb.Models.BUS
 
         public List<Subject> GetList()
         {
-            List<Subject> list = new List<Subject>();
-
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.subject");
-            foreach (DataRow item in data.Rows)
-            {
-                Subject emp = new Subject(item);
-                list.Add(emp);
-            }
-
-            return list;
+            return SubjectDAO.Instance.GetList();
         }
 
         public DataTable ShowTable()
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.subject");
-
-            return data;
+            return SubjectDAO.Instance.ShowTable();
         }
 
         public int Add(string code, string codeview, string name, int numberofcredit, int numberoflesson, int numberoftheory, int numberofexercise, int numberofdiscussion, int numberofpractive, string examform)
         {
-            string query = $"EXEC dbo.CreateSubject @mamon='{code}',@mahienthi='{codeview}',@tenmon=N'{name}',@sotc={numberofcredit},@sotiet={numberoflesson},@tietlt={numberoftheory},@tietbt ={numberofexercise},@tiettl ={numberofdiscussion},@tietth={numberofpractive},@htthi=N'{examform}'";
-
-            DataProvider.Instance.ExecuteNonQuery(query);
-
-            return 1;
+            return SubjectDAO.Instance.Add(code, codeview, name, numberofcredit, numberoflesson, numberoftheory, numberofexercise, numberofdiscussion, numberofpractive, examform);
         }
         public int Edit(string code, string codeview, string name, int numberofcredit, int numberoflesson, int numberoftheory, int numberofexercise, int numberofdiscussion, int numberofpractive, string examform)
         {
-            string query = $"EXEC UpdateSubject @mamon='{code}',@mahienthi='{codeview}',@tenmon=N'{name}',@sotc={numberofcredit},@sotiet={numberoflesson},@tietlt={numberoftheory},@tietbt ={numberofexercise},@tiettl ={numberofdiscussion},@tietth={numberofpractive},@htthi=N'{examform}'";
-
-            DataProvider.Instance.ExecuteNonQuery(query);
-
-            return 1;
+            return SubjectDAO.Instance.Edit(code, codeview, name, numberofcredit, numberoflesson, numberoftheory, numberofexercise, numberofdiscussion, numberofpractive, examform);
         }
         public int Delete(string code)
         {
-            string query = $"EXEC dbo.DelSubject @mamon = '{code}'";
-
-            DataProvider.Instance.ExecuteNonQuery(query);
-
-            return 1;
+            return SubjectDAO.Instance.Delete(code);
         }
 
     }

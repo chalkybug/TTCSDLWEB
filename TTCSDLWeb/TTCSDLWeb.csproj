@@ -178,20 +178,17 @@
     </Compile>
     <Compile Include="IsSession.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\BUS\CourseBUS.cs" />
     <Compile Include="Models\BUS\EducationfieldBUS.cs" />
     <Compile Include="Models\BUS\EducationspecializeBUS.cs" />
     <Compile Include="Models\BUS\GroupsubjectBUS.cs" />
     <Compile Include="Models\BUS\SubjectBUS.cs" />
     <Compile Include="Models\BUS\TrainingdetailsBUS.cs" />
-    <Compile Include="Models\DAO\CourseDAO.cs" />
     <Compile Include="Models\DAO\DataProvider.cs" />
     <Compile Include="Models\DAO\EducationfieldDAO.cs" />
     <Compile Include="Models\DAO\EducationspecializeDAO.cs" />
     <Compile Include="Models\DAO\GroupsubjectDAO.cs" />
     <Compile Include="Models\DAO\SubjectDAO.cs" />
     <Compile Include="Models\DAO\TrainingdetailsDAO.cs" />
-    <Compile Include="Models\DTO\Course.cs" />
     <Compile Include="Models\DTO\Educationfield.cs" />
     <Compile Include="Models\DTO\Educationspecialize.cs" />
     <Compile Include="Models\DTO\Groupsubject.cs" />

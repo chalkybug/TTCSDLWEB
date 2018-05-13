@@ -41,9 +41,9 @@ namespace TTCSDLWeb.Models.BUS
             return EducationfieldDAO.Instance.ShowTable();
         }
 
-        public int Add(string name, string facultycode)
+        public int Add(string code, string name, string facultycode)
         {
-            return EducationfieldDAO.Instance.Add(name, facultycode);
+            return EducationfieldDAO.Instance.Add(code,name, facultycode);
         }
         public int Edit(string code, string name, string facultycode)
         {

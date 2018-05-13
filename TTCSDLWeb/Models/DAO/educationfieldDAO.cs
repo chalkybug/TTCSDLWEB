@@ -51,9 +51,9 @@ namespace TTCSDLWeb.Models.DAO
             return data;
         }
 
-        public int Add(string name, string facultycode)
+        public int Add(string code ,string name, string facultycode)
         {
-            string query = $"";
+            string query = $"exec dbo.addeducationfield @code = '{code}',  @name = N'{name}', @facultycode = '{facultycode}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -61,7 +61,7 @@ namespace TTCSDLWeb.Models.DAO
         }
         public int Edit(string code, string name, string facultycode)
         {
-            string query = $"";
+            string query = $"EXEC dbo.UpdateEducationfield @manganh = '{code}',@ten = N'{name}', @makhoa = N'{facultycode}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 

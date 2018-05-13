@@ -41,9 +41,9 @@ namespace TTCSDLWeb.Models.BUS
             return GroupsubjectDAO.Instance.ShowTable();
         }
 
-        public int Add(string name)
+        public int Add(string code ,string name)
         {
-            return GroupsubjectDAO.Instance.Add(name);
+            return GroupsubjectDAO.Instance.Add(code,name);
         }
         public int Edit(string code, string name)
         {

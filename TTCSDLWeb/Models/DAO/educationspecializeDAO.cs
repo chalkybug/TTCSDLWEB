@@ -61,7 +61,7 @@ namespace TTCSDLWeb.Models.DAO
         }
         public int Edit(string code, string codeview, string name, string educationfieldcode)
         {
-            string query = $"EXEC UpdateEducationlize'{code}', '{codeview}', N'{name}', N'{educationfieldcode}'";
+            string query = $"EXEC UpdateEducationspecialize'{code}', '{codeview}', N'{name}', N'{educationfieldcode}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 

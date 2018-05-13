@@ -53,7 +53,7 @@ namespace TTCSDLWeb.Models.DAO
 
         public int Add(string subjectcode, string educationspecializecode, string fomality, int semester, string groupsubjectcode)
         {
-            string query = $"";
+            string query = $"EXEC dbo.AddTraningdetails @subjectcode = '{subjectcode}', @educationspecializecode = '{educationspecializecode}',  @fomality = N'{fomality}',  @semester = {semester}, @groupsubjectcode = '{groupsubjectcode}' -- varchar(10)";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -61,7 +61,7 @@ namespace TTCSDLWeb.Models.DAO
         }
         public int Edit(string subjectcode, string educationspecializecode, string fomality, int semester, string groupsubjectcode)
         {
-            string query = $"";
+            string query = $"EXEC dbo.UpdateTrainingdetails @mamon = '{subjectcode}', @macn='{educationspecializecode}',  @hinhthuc = N'{fomality}',@kihoc = {semester},  @manm = '{groupsubjectcode}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 

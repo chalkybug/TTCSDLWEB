@@ -53,7 +53,7 @@ namespace TTCSDLWeb.Models.DAO
 
         public int Add(string code, string name)
         {
-            string query = $"INSERT INTO dbo.groupsubject( code, name )VALUES  ( '{code}',N'{name}')";
+            string query = $"EXEC dbo.AddGroupsubject @code = '{code}',  @name = N'{name}' -- nvarchar(50)";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -61,7 +61,7 @@ namespace TTCSDLWeb.Models.DAO
         }
         public int Edit(string code, string name)
         {
-            string query = $"";
+            string query = $"EXEC dbo.UpdateGoupsubject @code = '{code}',  @name = N'{name}' -- nvarchar(50)";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 

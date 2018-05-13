@@ -69,7 +69,8 @@ namespace TTCSDLWeb.Models.DAO
         }
         public int Delete(string code)
         {
-            string query = $"DELETE dbo.educationspecialize WHERE code='{code}'";
+            //string query = $"DELETE dbo.educationspecialize WHERE code='{code}'";
+            string query = $"EXEC dbo.DeleteEducationSpecialize @code = '{code}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 

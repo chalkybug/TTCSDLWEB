@@ -62,6 +62,11 @@ namespace TTCSDLWeb.Controllers
             SubjectBUS.Instance.Delete(code);
             return RedirectToAction("MangagerSubject", "Subject");
         }
+        
+        public ActionResult Delete()
+        {
+            return View();
+        }
 
         [CustomAuthentication]
         public ActionResult SubjectReact()

@@ -272,6 +272,8 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Subject\Edit.cshtml" />
     <Content Include="Views\Subject\SubjectReact.cshtml" />
+    <Content Include="Views\Educationspecialize\Delete.cshtml" />
+    <Content Include="Views\Subject\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -76,5 +76,10 @@ namespace TTCSDLWeb.Controllers
             EducationspecializeBUS.Instance.Delete(code);
             return RedirectToAction("MangagerEducationspecialize", "Educationspecialize");
         }
+
+        public ActionResult Delete()
+        {
+            return View();
+        }
     }
 }

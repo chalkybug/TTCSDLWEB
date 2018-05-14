@@ -68,6 +68,13 @@ namespace TTCSDLWeb.Controllers
         {
             return View();
         }
+        public ActionResult Search(string name)
+        {
+
+            List<Subject> list = SubjectBUS.Instance.Search(name);
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
 
     }
 }

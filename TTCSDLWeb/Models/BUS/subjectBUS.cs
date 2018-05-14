@@ -53,6 +53,10 @@ namespace TTCSDLWeb.Models.BUS
         {
             return SubjectDAO.Instance.Delete(code);
         }
+        public List<Subject> Search(string name)
+        {
+            return SubjectDAO.Instance.Search(name);
+        }
 
     }
 }

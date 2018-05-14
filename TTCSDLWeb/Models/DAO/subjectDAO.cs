@@ -76,6 +76,20 @@ namespace TTCSDLWeb.Models.DAO
             return 1;
         }
 
+        public List<Subject> Search(string name)
+        {
+            List<Subject> list = new List<Subject>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery($"SELECT * FROM dbo.subject WHERE name LIKE '%{name}%'");
+            foreach (DataRow item in data.Rows)
+            {
+                Subject emp = new Subject(item);
+                list.Add(emp);
+            }
+
+            return list;
+        }
+
 
     }
 }

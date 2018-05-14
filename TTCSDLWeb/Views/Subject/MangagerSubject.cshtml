@@ -6,7 +6,51 @@
 }
 
 <h2>MangagerSubject</h2>
+<input type="text" id="search" />
+<button onclick="test()">Tìm Kiếm</button>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    function test() {
+        var contentSearch = $('#search').val();
+        $.ajax({
+            type: 'GET',
+            url: '/Subject/Search?name=' + contentSearch,
+            dataType: 'json',
+            success: function (data) {
+                $('.table').empty();
+                $('.table').append('<tr><th>Mã Môn</th> <th> Mã hiển thị</th> <th>Tên</th> <th>Số tín</th>  <th>Số Tiết</th>  <th>Lý Thuyết</th>  <th>Bài Tập</th>  <th>thảo luận</th>  <th>Thực Hành</th>  <th>  HT Thi</th>  </tr>');
+                data.forEach(element=> {
 
+                    var str = '<td>' + element.code + '</td> '
+
+                    str += '<td>' + element.codeview + '</td> '
+
+                    str += '<td>' + element.name + '</td> '
+
+                    str += '<td>' + element.numberofcredit + '</td>'
+
+                    str += '<td>' + element.numberoflesson + '</td> '
+
+                    str += '<td>' + element.numberoftheory + '</td> '
+
+                    str += '<td>' + element.numberofexercise + '</td>'
+                    str += '<td>' + element.numberofdiscussion + '</td> '
+
+                    str += '<td>' + element.numberofpractive + '</td> '
+                    str += '<td>' + element.examform + '</td> '
+
+
+                    $('.table').append('<tr>' + str + '</tr>')
+                })
+            },
+            error: function (xhr, status, err) {
+                console.log(err)
+            }
+        });
+    }
+
+
+</script>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -45,43 +89,44 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.code)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codeview)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numberofcredit)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numberoflesson)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numberoftheory)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numberofexercise)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numberofdiscussion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numberofpractive)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.examform)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { item.code }) |
-            @Html.ActionLink("Delete", "Delete", new { item.code })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codeview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numberofcredit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numberoflesson)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numberoftheory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numberofexercise)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numberofdiscussion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numberofpractive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.examform)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { item.code }) |
+                @Html.ActionLink("Delete", "Delete", new { item.code })
+            </td>
+        </tr>
+    }
 
 </table>

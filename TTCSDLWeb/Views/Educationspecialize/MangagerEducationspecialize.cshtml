@@ -6,6 +6,39 @@
 }
 
 <h2>MangagerEducationspecialize</h2>
+<input type="text" id="search" />
+<button onclick="test()">Tìm Kiếm</button>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    function test() {
+        var contentSearch = $('#search').val();
+        $.ajax({
+            type: 'GET',
+            url: '/Educationspecialize/Search?name=' + contentSearch,
+            dataType: 'json',
+            success: function (data) {
+                $('.table').empty();
+                $('.table').append('<tr><th>code</th> <th>codeview</th> <th>name</th><th>educationfieldcode</th> </tr>');
+                data.forEach(element=> {
+
+                    var str = '<td>' + element.code+ '</td> '
+                   
+                     str += '<td>' + element.codeview + '</td> '
+                   
+                     str += '<td>' + element.name + '</td> '
+                   
+                     str += '<td>' + element.educationfieldcode + '</td>'
+                    $('.table').append('<tr>'+str+'</tr>')
+                } )
+            },
+            error: function (xhr, status, err) {
+                console.log(err)
+            }
+        });
+    }
+
+
+</script>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -27,25 +60,26 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.code)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codeview)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.educationfieldcode)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { item.code }) |
-            @Html.ActionLink("Delete", "Delete", new { item.code })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codeview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.educationfieldcode)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { item.code }) |
+                @Html.ActionLink("Delete", "Delete", new { item.code })
+            </td>
+        </tr>
+    }
 
 </table>

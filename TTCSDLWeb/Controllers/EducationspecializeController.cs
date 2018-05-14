@@ -62,9 +62,10 @@ namespace TTCSDLWeb.Controllers
             return RedirectToAction("MangagerEducationspecialize", "Educationspecialize");
         }
 
-        //public JsonResult Search(string name)
-        //{
-            
-        //}
+        public JsonResult Search(string name)
+        {
+            List < Educationspecialize > list = EducationspecializeBUS.Instance.Search(name);
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
     }
 }

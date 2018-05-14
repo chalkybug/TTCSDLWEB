@@ -19,26 +19,11 @@ namespace TTCSDLWeb.Controllers
             return View(list);
         }
         
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        public ActionResult doLogin(string username, string password)
-        {
-            if (username.Equals("admin") && password.Equals("123"))
-            {
-                ses.login();
-                return RedirectToAction("MangagerEducationspecialize", "Educationspecialize");
-            }
-            return RedirectToAction("Login", "Educationspecialize");
-        }
-
         public ActionResult MangagerEducationspecialize()
         {
             if (ses.isLogin() == -1)
             {
-                return RedirectToAction("Login", "Educationspecialize");
+                return RedirectToAction("Login", "Home");
             }
             List<Educationspecialize> listEducationspecialize = EducationspecializeBUS.Instance.GetList();
             return View(listEducationspecialize);
@@ -76,5 +61,10 @@ namespace TTCSDLWeb.Controllers
             EducationspecializeBUS.Instance.Delete(code);
             return RedirectToAction("MangagerEducationspecialize", "Educationspecialize");
         }
+
+        //public JsonResult Search(string name)
+        //{
+            
+        //}
     }
 }

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<TTCSDLWeb.Models.DTO.Trainingdetails>
+
+@{
+    ViewBag.Title = "MangagerTrainingdetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MangagerTrainingdetails</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.subjectcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.educationspecializecode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fomality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.semester)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.groupsubjectcode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.subjectcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.educationspecializecode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fomality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.semester)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.groupsubjectcode)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { item.subjectcode }) |
+            @Html.ActionLink("Delete", "Delete", new { item.subjectcode })
+        </td>
+    </tr>
+}
+
+</table>

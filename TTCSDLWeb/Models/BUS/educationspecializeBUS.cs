@@ -54,6 +54,10 @@ namespace TTCSDLWeb.Models.BUS
         {
             return EducationspecializeDAO.Instance.Delete(code);
         }
+        public List<Educationspecialize> Search(string name)
+        {
+            return EducationspecializeDAO.Instance.Search(name);
+        }
 
     }
 }

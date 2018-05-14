@@ -69,12 +69,26 @@ namespace TTCSDLWeb.Models.DAO
         }
         public int Delete(string code)
         {
-            string query = $"DELETE dbo.educationspecialize WHERE code='{code}'";
+            string query = $"EXEC dbo.DeleteEducationSpecialize @code = '{code}'   ";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
             return 1;
         }
 
+
+        public List<Educationspecialize> Search(string name)
+        {
+            List<Educationspecialize> list = new List<Educationspecialize>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery($"SELECT * FROM dbo.educationspecialize WHERE name LIKE '%{name}%'");
+            foreach (DataRow item in data.Rows)
+            {
+                Educationspecialize emp = new Educationspecialize(item);
+                list.Add(emp);
+            }
+
+            return list;
+        }
     }
 }

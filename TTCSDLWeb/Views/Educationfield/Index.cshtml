@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TTCSDLWeb.Models.DTO.Educationspecialize>
+﻿@model IEnumerable<TTCSDLWeb.Models.DTO.Educationfield>
 
 @{
     ViewBag.Title = "Index";
@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Đăng nhập", "MangagerEducationspecialize")
+    @Html.ActionLink("Đăng nhập", "MangagerEducationfield")
 </p>
 <table class="table">
     <tr>
@@ -16,13 +16,10 @@
             @Html.DisplayNameFor(model => model.code)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.codeview)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.educationfieldcode)
+            @Html.DisplayNameFor(model => model.facultycode)
         </th>
         <th></th>
     </tr>
@@ -33,17 +30,12 @@
             @Html.DisplayFor(modelItem => item.code)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.codeview)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.educationfieldcode)
+            @Html.DisplayFor(modelItem => item.facultycode)
         </td>
-        <td>
-         
-        </td>
+      
     </tr>
 }
 

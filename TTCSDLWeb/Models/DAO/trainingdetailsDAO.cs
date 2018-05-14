@@ -69,7 +69,7 @@ namespace TTCSDLWeb.Models.DAO
         }
         public int Delete(string code)
         {
-            string query = $"";
+            string query = $"EXEC dbo.DeleteTrainingDetails @subjectcode = '{code}' ";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 

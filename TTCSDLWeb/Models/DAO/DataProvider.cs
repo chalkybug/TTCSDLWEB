@@ -11,7 +11,7 @@ namespace TTCSDLWeb.Models.DAO
     {
         private static DataProvider instance; // khởi tạo một đối tượng
         private DataProvider() { } // khởi tạo hàm mặc định
-        private string str = @"Data Source=.\SQLEXPRESS;Initial Catalog=CSDLNhom4;Integrated Security=True";
+        private string str = @"Data Source=.\SQLEXPRESS;Initial Catalog=TTCSDLWeb1;Integrated Security=True";
 
         public static DataProvider Instance // đóng gói dữ liệu vẫn chưa thêm xử lý chồng chéo dữ liệu
         {

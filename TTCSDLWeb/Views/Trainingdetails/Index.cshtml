@@ -1,0 +1,54 @@
+﻿@model IEnumerable<TTCSDLWeb.Models.DTO.Trainingdetails>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Đăng nhập", "MangagerTrainingdetails")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.subjectcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.educationspecializecode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fomality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.semester)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.groupsubjectcode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.subjectcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.educationspecializecode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fomality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.semester)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.groupsubjectcode)
+        </td>
+
+    </tr>
+}
+
+</table>
